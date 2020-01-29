@@ -10,3 +10,10 @@ import pygame
 from pygame import *
 import sys
 import os
+
+#will show a list of the various challenges for Pi Wars 2020
+def piWarsChallenges():
+    piWars2020List = 'piwars2020challenges.csv'
+    
+    with open(piWars2020List, 'r') as myfile_obj:
+        myfile_reader = csv.reader(myfile_obj)
