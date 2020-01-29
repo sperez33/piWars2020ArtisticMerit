@@ -17,3 +17,20 @@ def piWarsChallenges():
     
     with open(piWars2020List, 'r') as myfile_obj:
         myfile_reader = csv.reader(myfile_obj)
+        
+        for idx, row in enumerate(myfile_reader):
+            
+            #each row is turned into a variable to handle easier
+            v = row[0]
+            w = row[1]
+            
+            #this will format it in an aesthetic way
+            fmt = '{:<8}{:<30}{}'
+            if idx == 0:
+                print("-"*60)
+            elif idx == 1:
+                print("-"*60)
+            
+            print(fmt.format('', v, w))
+            
+piWarsChallenges()
