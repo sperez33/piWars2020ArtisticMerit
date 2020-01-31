@@ -55,6 +55,18 @@ def lavaPalava():
                 print("-"*60)
             
             print(fmt.format(x, y, z))
+            
+    #choose a song
+    songChoice = int(input('Which song would you like? (enter corresponding number): '))
+    
+    if songChoice == 0:
+        kong = 'music/03 Kong.mp3'
+        
+        pygame.init()
+        pygame.mixer.init()
+        pygame.mixer.music.load(kong)
+        pygame.mixer.music.play()
+        pygame.event.wait()
 
 #begins the musical quest!
 #the .upper() will reduce user error and take what's entered and capitalize it.
