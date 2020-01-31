@@ -36,5 +36,24 @@ def piWarsChallenges():
 #lavaPalava music
 def lavaPalava():
     lavaPalavaMusic = 'lavaPalava.csv'
+    
+    with open(lavaPalavaMusic, 'r') as myfile_obj:
+        myfile_reader = csv.reader(myfile_obj)
+        
+    for idx, row in enumerate(myfile_reader):
+        
+        #variables for each row in the csv file to be used for aesthetics
+        x = row[0]
+        y = row[1]
+        z = row[2]
+        
+        #using the variables to create aesthetics in the terminal
+        fmt = '{:<8}{:<30}{}'
+        if idx == 0:
+            print("-"*60)
+        elif idx == 1:
+            print("-"*60)
+        
+        print(fmt.format('', x, y, z))
             
 piWarsChallenges()
