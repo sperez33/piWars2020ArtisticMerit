@@ -66,7 +66,9 @@ def lavaPalava():
         pygame.mixer.init()
         pygame.mixer.music.load(kong)
         pygame.mixer.music.play()
-        pygame.event.wait()
+        #pygame.event.wait() instead of this, the while loop works better to keep playing the song till its over
+        while mixer.music.get_busy():
+            time.Clock().tick(10)
 
 #begins the musical quest!
 #the .upper() will reduce user error and take what's entered and capitalize it.
