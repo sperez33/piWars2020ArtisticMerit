@@ -33,4 +33,8 @@ def piWarsChallenges():
             
             print(fmt.format('', v, w))
             
+#lavaPalava music
+def lavaPalava():
+    lavaPalavaMusic = 'lavaPalava.csv'
+            
 piWarsChallenges()
