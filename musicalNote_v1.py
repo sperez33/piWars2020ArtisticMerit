@@ -104,7 +104,43 @@ def ecoDisaster():
         #pygame.event.wait() instead of this, the while loop works better to keep playing the song till its over
         while mixer.music.get_busy():
             time.Clock().tick(10)
+
+#ESCAPE ROUTE section ###########################################           
+def escapeRoute():
+    escapeRouteMusic = 'escapeRoute.csv'
+    with open(escapeRouteMusic, 'r') as myfile_obj:
+        myfile_reader = csv.reader(myfile_obj)
+        
+        for idx, row in enumerate(myfile_reader):
             
+            #variables for each row in the csv file to be used for aesthetics
+            x = row[0]
+            y = row[2]
+            z = row[3]
+            
+            #using the variables to create aesthetics in the terminal
+            fmt = '{:<8}{:<15}{}'
+            if idx == 0:
+                print("-"*60)
+            elif idx == 1:
+                print("-"*60)
+            
+            print(fmt.format(x, y, z))
+            
+    #choose a song
+    songChoice = int(input('Which song would you like? (enter corresponding number): '))
+    
+    if songChoice == 0:
+        kong = 'music/03 Kong.mp3'
+        
+        pygame.init()
+        pygame.mixer.init()
+        pygame.mixer.music.load(kong)
+        pygame.mixer.music.play()
+        #pygame.event.wait() instead of this, the while loop works better to keep playing the song till its over
+        while mixer.music.get_busy():
+            time.Clock().tick(10)
+
 #####--- Begins form request for user in terminal ---#####
 #begins the musical quest!
 #the .upper() will reduce user error and take what's entered and capitalize it.
@@ -120,3 +156,6 @@ if musicChoice == 'Y':
     elif piWars2020 == 1:
         print('Welcome to the Eco Disaster Challenge! Choose a song!')
         ecoDisaster()
+    elif piWars2020 == 2:
+        print('Welcome to the Escape Route Challenge! Choose a song!')
+        escapeRoute()
